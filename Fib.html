@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script> 
+            function fib() {
+                var count, output;
+                var first = 0;
+                var second = 1;
+                count= Number(document.getElementById('entered').value);
+                
+                var temp = 0;
+                for (i=2;i<count;i++) {
+                    // get new biggest number
+                    temp = first + second;
+                    // update first and second
+                    first = second;
+                    second = temp;
+                }
+                output = temp;
+                document.getElementById('answer').innerHTML = output;
+            }
+        </script>
+    </head>
+    <body>
+        Enter the first number : <input id = "entered">
+        <button onclick= "fib()"> Go </button>
+        <p id = "answer">0</p>
+    </body>
+</html>
