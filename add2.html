@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        </script>
+        <script>
+            function add(){
+                var count=document.getElementById('entered').value
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8080?count="+count,
+                    success: function(data){
+                        document.getElementById('answer').innerHTML= data;
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        Enter the number: <input id= "entered">
+        <button onclick= "add()">Go</button>
+        <p id = "answer"></p>
+    </body>
+<html>
